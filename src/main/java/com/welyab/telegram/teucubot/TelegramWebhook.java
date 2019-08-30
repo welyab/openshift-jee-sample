@@ -14,6 +14,13 @@ import javax.ws.rs.core.Response;
 public class TelegramWebhook {
 
 	@GET
+	@Path("env")
+	@Produces("text/plain")
+	public Response env() {
+		return Response.ok(System.getenv("telegramtoken")).build();
+	}
+
+	@GET
 	@Produces("text/plain")
 	public Response test() {
 		return Response.ok("Ok!").build();
